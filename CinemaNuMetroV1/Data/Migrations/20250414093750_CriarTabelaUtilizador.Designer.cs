@@ -4,6 +4,7 @@ using CinemaNuMetroV1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CinemaNuMetroV1.Data.Migrations
 {
     [DbContext(typeof(CinemaNuMetroV1Context))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250414093750_CriarTabelaUtilizador")]
+    partial class CriarTabelaUtilizador
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

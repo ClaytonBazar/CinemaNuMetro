@@ -9,7 +9,7 @@ using System;
 
 namespace CinemaNuMetroV1.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(CinemaNuMetroV1Context))]
     [Migration("00000000000000_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {

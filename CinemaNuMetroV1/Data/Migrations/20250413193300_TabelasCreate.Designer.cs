@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CinemaNuMetroV1.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(CinemaNuMetroV1Context))]
     [Migration("20250413193300_TabelasCreate")]
     partial class TabelasCreate
     {
