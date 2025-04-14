@@ -2,8 +2,11 @@ using CinemaNuMetroV1.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<CinemaNuMetroV1Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("CinemaNuMetroV1Context") ?? throw new InvalidOperationException("Connection string 'CinemaNuMetroV1Context' not found.")));
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");

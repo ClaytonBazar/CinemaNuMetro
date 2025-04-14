@@ -9,17 +9,18 @@ namespace CinemaNuMetroV1.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private long Id { get; set; }
-        private DateOnly data { get; set; }
-        private TimeOnly horario { get; set; }
+        public long Id { get; set; }
+        [Required]
+        [MaxLength(10)]
+        public int sala { get; set; }
+        public DateOnly data { get; set; }
+        public TimeOnly horario { get; set; }
         [Required]
         [MaxLength(128)]
-        private string tipoSessao { get; set; }
-        [Required]
-        [MaxLength(1)]
-        private int sala {  get; set; }
+        public string tipoSessao { get; set; }
 
-        private Boolean acessorios { get; set; } = false;
+
+        public Boolean acessorios { get; set; } = false;
 
     }
 }

@@ -8,24 +8,25 @@ namespace CinemaNuMetroV1.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int id {  get; set; }
+        public int Id { get; set; }
         [Required]
         [MaxLength(256)]
-        private string titulo { get; set; }
+        public string titulo { get; set; }
         [Required]
         [MaxLength(100)]
-        private string categoria { get; set; }
-        private TimeOnly duracao { get; set;}
+        public string categoria { get; set; }
+        public TimeOnly duracao { get; set;}
         [Required]
         [MaxLength(250)]
-        private string descricao { get; set;}
+        public string descricao { get; set;}
         [Required]
-        private string cast {  get; set;}
+        public string cast {  get; set;}
         [Required]
-        private string trailer {  get; set;}
+        public string trailer {  get; set;}
         [Required]
-        private double preco { get; set;}
-
+        public double preco { get; set;}
+        [Required]
+        public string imagemUrl {  get; set;}
 
     }
 }

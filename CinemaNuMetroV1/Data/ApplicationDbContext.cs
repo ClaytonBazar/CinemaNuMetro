@@ -8,14 +8,9 @@ namespace CinemaNuMetroV1.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
-        
-        public DbSet<Utilizador> Utilizadores { get; set; }
-        public DbSet<filme> filmes { get; set; }
-        public DbSet<Sessao> Sessions { get; set; }
-        public DbSet<Administrador> Administradores { get; set; }
-    
-
-
-
+        public DbSet<Models.Utilizador> Utilizador { get; set; }
+        public DbSet<Models.filme> filme { get; set; }
+        public DbSet<Models.Sessao> Sessao { get; set; }
+       
     }
 }

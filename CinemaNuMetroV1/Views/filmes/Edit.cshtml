@@ -1,0 +1,69 @@
+﻿@model CinemaNuMetroV1.Models.filme
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>filme</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="titulo" class="control-label"></label>
+                <input asp-for="titulo" class="form-control" />
+                <span asp-validation-for="titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="categoria" class="control-label"></label>
+                <input asp-for="categoria" class="form-control" />
+                <span asp-validation-for="categoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duracao" class="control-label"></label>
+                <input asp-for="duracao" class="form-control" />
+                <span asp-validation-for="duracao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="descricao" class="control-label"></label>
+                <input asp-for="descricao" class="form-control" />
+                <span asp-validation-for="descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cast" class="control-label"></label>
+                <input asp-for="cast" class="form-control" />
+                <span asp-validation-for="cast" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="trailer" class="control-label"></label>
+                <input asp-for="trailer" class="form-control" />
+                <span asp-validation-for="trailer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="preco" class="control-label"></label>
+                <input asp-for="preco" class="form-control" />
+                <span asp-validation-for="preco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="imagemUrl" class="control-label"></label>
+                <input asp-for="imagemUrl" class="form-control" />
+                <span asp-validation-for="imagemUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

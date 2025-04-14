@@ -3,22 +3,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CinemaNuMetroV1.Models
 {
-    [Table("tb_utilizador")]
+    [Table("Utilizador")]
     public class Utilizador
     {
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private long id { get; set; }
+        public long Id { get; set; }
         [Required]
         [MaxLength(125)]
-        private string nome { get; set; }
+        public string nome { get; set; }
         [Required]
         [EmailAddress]
-        private string email { get; set;}
+        public string email { get; set;}
         [Required]
-        [Phone]
-        private int contacto { get; set;}
+        public long contacto { get; set;}
     }
 
 
