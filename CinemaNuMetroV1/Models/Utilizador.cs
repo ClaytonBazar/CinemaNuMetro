@@ -18,6 +18,8 @@ namespace CinemaNuMetroV1.Models
         public string email { get; set;}
         [Required]
         public long contacto { get; set;}
+
+
     }
 
 

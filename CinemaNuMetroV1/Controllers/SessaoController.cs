@@ -54,7 +54,7 @@ namespace CinemaNuMetroV1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,sala,data,horario,tipoSessao,acessorios")] Sessao sessao)
+        public async Task<IActionResult> Create([Bind("Id,tipoSessao,data,horario,acessorios,sala")] Sessao sessao)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace CinemaNuMetroV1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,sala,data,horario,tipoSessao,acessorios")] Sessao sessao)
+        public async Task<IActionResult> Edit(long id, [Bind("Id,tipoSessao,data,horario,acessorios,sala")] Sessao sessao)
         {
             if (id != sessao.Id)
             {

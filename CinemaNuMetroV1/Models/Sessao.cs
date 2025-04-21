@@ -11,16 +11,18 @@ namespace CinemaNuMetroV1.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
         [Required]
-        [MaxLength(10)]
-        public int sala { get; set; }
-        public DateOnly data { get; set; }
-        public TimeOnly horario { get; set; }
-        [Required]
         [MaxLength(128)]
         public string tipoSessao { get; set; }
+        [Required]
+        public DateOnly data { get; set; }
+        [Required]
+        public TimeOnly horario { get; set; }
 
 
         public Boolean acessorios { get; set; } = false;
+        [Required]
+        public int sala { get; set; }
+
 
     }
 }

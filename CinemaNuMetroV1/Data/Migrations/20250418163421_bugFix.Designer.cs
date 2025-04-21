@@ -4,6 +4,7 @@ using CinemaNuMetroV1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CinemaNuMetroV1.Data.Migrations
 {
     [DbContext(typeof(CinemaNuMetroV1Context))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250418163421_bugFix")]
+    partial class bugFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,9 +42,8 @@ namespace CinemaNuMetroV1.Data.Migrations
                     b.Property<TimeOnly>("horario")
                         .HasColumnType("time");
 
-                    b.Property<string>("sala")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("sala")
+                        .HasColumnType("int");
 
                     b.Property<string>("tipoSessao")
                         .IsRequired()

@@ -61,7 +61,7 @@ namespace CinemaNuMetroV1.Controllers
                 if (imageUpload != null && imageUpload.Length > 0)
                 {
                     // Define o caminho onde a imagem será salva
-                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "NovaPasta");
 
                     // Garante que a pasta existe
                     if (!Directory.Exists(uploadsFolder))
@@ -78,14 +78,14 @@ namespace CinemaNuMetroV1.Controllers
                     }
 
                     // Guarda o caminho relativo no banco de dados
-                    filme.imagemUrl = "/images/" + uniqueFileName;
+                    filme.imagemUrl = "/NovaPasta/" + uniqueFileName;
                 }
-
-                _context.Add(filme);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return View(filme);
+                
             }
-            return View(filme);
+            _context.filme.Add(filme);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
 

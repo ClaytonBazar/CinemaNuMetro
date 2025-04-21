@@ -10,7 +10,7 @@ namespace CinemaNuMetroV1.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
-        [MaxLength(256)]
+        [MaxLength(256)] 
         public string titulo { get; set; }
         [Required]
         [MaxLength(100)]
@@ -27,6 +27,7 @@ namespace CinemaNuMetroV1.Models
         public double preco { get; set;}
         [Required]
         public string imagemUrl {  get; set;}
+
 
     }
 }
